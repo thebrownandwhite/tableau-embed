@@ -1,0 +1,9 @@
+*.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.idea
+.env
+.vscode
+*.zip
