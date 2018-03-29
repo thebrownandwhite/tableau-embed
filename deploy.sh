@@ -1,5 +1,5 @@
 #!/bin/bash
-PLUGIN=$"tableau-shortcode";
+PLUGIN=$"tableau-embed";
 WP_PLUGIN_DIR=$"../../sites/wordpress/wp-content/plugins";
 WP_PATH=$"../../sites/wordpress";
 

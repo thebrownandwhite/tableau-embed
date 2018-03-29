@@ -1,4 +1,4 @@
-# Tableau Shortcode Plugin
+# Tableau Embed Plugin
 
 Adds tableau support to the wordpress embed shortcode.
 

@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Tableau Shortcode
-Description: A plugin that adds shortcode for inserting Tableau graphics.
+Plugin Name: Tableau Embed
+Description: A plugin that adds oEmbed support for Tableau graphics.
 Version: 0.1
 Author: Roshan Giyanani
 License: GPLv2 or later
@@ -9,12 +9,12 @@ License: GPLv2 or later
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-class TABLEAU_SHORTCODE {
+class TABLEAU_EMBED {
 
     /* INTERNAL METHODS */
     public static function register_embed_handler() {
         $regex = "http://public\.tableau\.com/";
-        $callback = array('TABLEAU_SHORTCODE', 'embed_handler');
+        $callback = array('TABLEAU_EMBED', 'embed_handler');
 
         /* register tableau shortcode */
         wp_embed_register_handler( 'tableau', $regex, $callback );
@@ -34,17 +34,17 @@ class TABLEAU_SHORTCODE {
     }
 }
 
-function activate_tableau_shortcode() {
+function activate_tableau_embed() {
     error_log("activating");
-    TABLEAU_SHORTCODE::register_embed_handler();
+    TABLEAU_EMBED::register_embed_handler();
 }
 
-function deactivate_tableau_shortcode() {
+function deactivate_tableau_embed() {
     error_log("deactivating");
-    TABLEAU_SHORTCODE::unregister_embed_handler();
+    TABLEAU_EMBED::unregister_embed_handler();
 }
 
-register_activation_hook( __FILE__, 'activate_tableau_shortcode' );
-register_deactivation_hook( __FILE__, 'deactivate_tableau_shortcode');
+register_activation_hook( __FILE__, 'activate_tableau_embed' );
+register_deactivation_hook( __FILE__, 'deactivate_tableau_embed');
 
 ?>
